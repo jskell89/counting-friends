@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Counting Friends</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Pick a friend -->
+<section class="start" id="start">
+  <h1>Who do you want to count with?</h1>
+  <p>Pick a friend and let’s count all the way to 100!</p>
+  <div class="friends" id="friends"></div>
+</section>
+
+<!-- Counting game -->
+<section class="game" id="game" hidden>
+  <div class="topbar">
+    <button class="chip" id="changeBtn">🏠 New friend</button>
+    <button class="chip" id="soundBtn" aria-pressed="true">🔊 Sound on</button>
+  </div>
+
+  <div class="path" id="path" aria-label="Stickers for each ten"></div>
+
+  <div class="bubble-row">
+    <div class="avatar" id="avatar" aria-hidden="true">🐱</div>
+    <div class="bubble" id="bubble" aria-live="polite">Let’s count!</div>
+  </div>
+
+  <div class="board">
+    <div class="panel tens">
+      <h2>Tens<small id="tensLabel">full baskets</small></h2>
+      <div class="area"><div class="rods" id="rods"></div></div>
+      <div class="digit" id="tensDigit">0</div>
+    </div>
+    <div class="panel ones">
+      <h2>Ones<small id="onesLabel">kittens</small></h2>
+      <div class="area"><div class="frame" id="frame"></div></div>
+      <div class="digit" id="onesDigit">0</div>
+    </div>
+  </div>
+
+  <div class="word" id="word">zero</div>
+
+  <div class="controls" id="controls">
+    <button class="big go" id="goBtn">▶ Go</button>
+    <button class="big one" id="oneBtn">+1</button>
+    <div class="speeds" role="group" aria-label="Speed">
+      <button data-speed="0" aria-pressed="false" aria-label="Slow" title="Slow">🐢</button>
+      <button data-speed="1" aria-pressed="true" aria-label="Medium" title="Medium">🐼</button>
+      <button data-speed="2" aria-pressed="false" aria-label="Fast" title="Fast">🐰</button>
+    </div>
+  </div>
+
+  <div class="pad-wrap" id="padWrap" hidden>
+    <div class="pad" id="pad"></div>
+    <p class="hint">Tap the number!</p>
+  </div>
+
+  <div class="fine"><button id="resetBtn">Start over from 0</button></div>
+</section>
+
+<!-- 100! -->
+<section class="finale" id="finale" hidden>
+  <h2 class="hundred">100!</h2>
+  <p id="finaleText">You counted all the way to one hundred!</p>
+  <div class="square" id="square" aria-hidden="true"></div>
+  <div class="controls">
+    <button class="big go" id="againBtn">Count again</button>
+    <button class="big one" id="newFriendBtn">New friend</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
